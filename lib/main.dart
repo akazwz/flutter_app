@@ -7,7 +7,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Startup Name Generator',
+      title: 'RandomWords',
       home: RandomWords(),
     );
   }
@@ -27,7 +27,7 @@ class _RandomWordsState extends State<RandomWords> {
         padding: EdgeInsets.all(16.0),
         itemBuilder: (context, i) {
           if (i.isOdd) return Divider();
-          
+
           final index = i ~/ 2;
           if (index >= _suggestions.length) {
             _suggestions.addAll(generateWordPairs().take(10));
@@ -45,7 +45,7 @@ class _RandomWordsState extends State<RandomWords> {
       ),
     );
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
